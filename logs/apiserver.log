@@ -1,0 +1,365 @@
+E0406 18:49:21.024675       1 reflector.go:201] k8s.io/kubernetes/pkg/client/informers/informers_generated/internalversion/factory.go:70: Failed to list *rbac.ClusterRoleBinding: Get https://localhost:6443/apis/rbac.authorization.k8s.io/v1beta1/clusterrolebindings?resourceVersion=0: dial tcp 127.0.0.1:6443: getsockopt: connection refused
+E0406 18:49:21.025332       1 reflector.go:201] k8s.io/kubernetes/pkg/client/informers/informers_generated/internalversion/factory.go:70: Failed to list *rbac.RoleBinding: Get https://localhost:6443/apis/rbac.authorization.k8s.io/v1beta1/rolebindings?resourceVersion=0: dial tcp 127.0.0.1:6443: getsockopt: connection refused
+E0406 18:49:21.025548       1 reflector.go:201] k8s.io/kubernetes/pkg/client/informers/informers_generated/internalversion/factory.go:70: Failed to list *rbac.ClusterRole: Get https://localhost:6443/apis/rbac.authorization.k8s.io/v1beta1/clusterroles?resourceVersion=0: dial tcp 127.0.0.1:6443: getsockopt: connection refused
+E0406 18:49:21.025788       1 reflector.go:201] k8s.io/kubernetes/pkg/client/informers/informers_generated/internalversion/factory.go:70: Failed to list *api.ResourceQuota: Get https://localhost:6443/api/v1/resourcequotas?resourceVersion=0: dial tcp 127.0.0.1:6443: getsockopt: connection refused
+E0406 18:49:21.025992       1 reflector.go:201] k8s.io/kubernetes/pkg/client/informers/informers_generated/internalversion/factory.go:70: Failed to list *api.Secret: Get https://localhost:6443/api/v1/secrets?resourceVersion=0: dial tcp 127.0.0.1:6443: getsockopt: connection refused
+E0406 18:49:21.026244       1 reflector.go:201] k8s.io/kubernetes/pkg/client/informers/informers_generated/internalversion/factory.go:70: Failed to list *storage.StorageClass: Get https://localhost:6443/apis/storage.k8s.io/v1beta1/storageclasses?resourceVersion=0: dial tcp 127.0.0.1:6443: getsockopt: connection refused
+E0406 18:49:21.026441       1 reflector.go:201] k8s.io/kubernetes/pkg/client/informers/informers_generated/internalversion/factory.go:70: Failed to list *api.ServiceAccount: Get https://localhost:6443/api/v1/serviceaccounts?resourceVersion=0: dial tcp 127.0.0.1:6443: getsockopt: connection refused
+E0406 18:49:21.026969       1 reflector.go:201] k8s.io/kubernetes/pkg/client/informers/informers_generated/internalversion/factory.go:70: Failed to list *rbac.Role: Get https://localhost:6443/apis/rbac.authorization.k8s.io/v1beta1/roles?resourceVersion=0: dial tcp 127.0.0.1:6443: getsockopt: connection refused
+E0406 18:49:21.027194       1 reflector.go:201] k8s.io/kubernetes/pkg/client/informers/informers_generated/internalversion/factory.go:70: Failed to list *api.Namespace: Get https://localhost:6443/api/v1/namespaces?resourceVersion=0: dial tcp 127.0.0.1:6443: getsockopt: connection refused
+E0406 18:49:21.027435       1 reflector.go:201] k8s.io/kubernetes/pkg/client/informers/informers_generated/internalversion/factory.go:70: Failed to list *api.LimitRange: Get https://localhost:6443/api/v1/limitranges?resourceVersion=0: dial tcp 127.0.0.1:6443: getsockopt: connection refused
+[restful] 2017/04/06 18:49:21 log.go:30: [restful/swagger] listing is available at https://192.168.50.4:6443/swaggerapi/
+[restful] 2017/04/06 18:49:21 log.go:30: [restful/swagger] https://192.168.50.4:6443/swaggerui/ is mapped to folder /swagger-ui/
+I0406 18:49:21.194970       1 serve.go:79] Serving securely on 0.0.0.0:6443
+I0406 18:49:22.281476       1 trace.go:61] Trace "List /api/v1/componentstatuses" (started 2017-04-06 18:49:21.52441224 +0000 UTC):
+[13.484µs] [13.484µs] About to List from storage
+[756.482095ms] [756.468611ms] Listing from storage done
+[756.536888ms] [54.793µs] Self-linking done
+[757.009861ms] [472.973µs] Writing http response done (3 items)
+"List /api/v1/componentstatuses" [757.010909ms] [1.048µs] END
+I0406 18:49:24.200628       1 trace.go:61] Trace "List /api/v1/nodes" (started 2017-04-06 18:49:22.784266152 +0000 UTC):
+[9.727µs] [9.727µs] About to List from storage
+[1.41579505s] [1.415785323s] Listing from storage done
+[1.415819938s] [24.888µs] Self-linking done
+[1.416314184s] [494.246µs] Writing http response done (0 items)
+"List /api/v1/nodes" [1.416315181s] [997ns] END
+I0406 18:49:24.202544       1 trace.go:61] Trace "cacher *rbac.ClusterRole: List" (started 2017-04-06 18:49:22.036018623 +0000 UTC):
+[2.166416656s] [2.166416656s] Ready
+[2.166427056s] [10.4µs] watchCache locked acquired
+[2.166427357s] [301ns] watchCache fresh enough
+[2.166433248s] [5.891µs] Listed 0 items from cache
+[2.16643549s] [2.242µs] Filtered 0 items
+"cacher *rbac.ClusterRole: List" [2.166444137s] [8.647µs] END
+I0406 18:49:24.202680       1 trace.go:61] Trace "List /apis/rbac.authorization.k8s.io/v1beta1/clusterroles" (started 2017-04-06 18:49:22.03584605 +0000 UTC):
+[160.49µs] [160.49µs] About to List from storage
+[2.166716074s] [2.166555584s] Listing from storage done
+[2.166728143s] [12.069µs] Self-linking done
+[2.166804973s] [76.83µs] Writing http response done (0 items)
+"List /apis/rbac.authorization.k8s.io/v1beta1/clusterroles" [2.166805537s] [564ns] END
+I0406 18:49:24.205568       1 trace.go:61] Trace "cacher *rbac.RoleBinding: List" (started 2017-04-06 18:49:22.030621337 +0000 UTC):
+[2.174899091s] [2.174899091s] Ready
+[2.174904471s] [5.38µs] watchCache locked acquired
+[2.174904576s] [105ns] watchCache fresh enough
+[2.174908495s] [3.919µs] Listed 0 items from cache
+[2.174909734s] [1.239µs] Filtered 0 items
+"cacher *rbac.RoleBinding: List" [2.17491645s] [6.716µs] END
+I0406 18:49:24.205693       1 trace.go:61] Trace "List /apis/rbac.authorization.k8s.io/v1beta1/rolebindings" (started 2017-04-06 18:49:22.029684077 +0000 UTC):
+[925.604µs] [925.604µs] About to List from storage
+[2.175901153s] [2.174975549s] Listing from storage done
+[2.175910274s] [9.121µs] Self-linking done
+[2.175979814s] [69.54µs] Writing http response done (0 items)
+"List /apis/rbac.authorization.k8s.io/v1beta1/rolebindings" [2.175980302s] [488ns] END
+I0406 18:49:24.208895       1 trace.go:61] Trace "List /apis/rbac.authorization.k8s.io/v1beta1/clusterroles" (started 2017-04-06 18:49:22.200057211 +0000 UTC):
+[6.872µs] [6.872µs] About to List from storage
+[2.008756969s] [2.008750097s] Listing from storage done
+[2.008762943s] [5.974µs] Self-linking done
+[2.008807433s] [44.49µs] Writing http response done (0 items)
+"List /apis/rbac.authorization.k8s.io/v1beta1/clusterroles" [2.00880804s] [607ns] END
+I0406 18:49:24.208955       1 trace.go:61] Trace "List /apis/extensions/v1beta1/thirdpartyresources" (started 2017-04-06 18:49:21.252380211 +0000 UTC):
+[7.181µs] [7.181µs] About to List from storage
+[2.956449715s] [2.956442534s] Listing from storage done
+[2.956461418s] [11.703µs] Self-linking done
+[2.956526558s] [65.14µs] Writing http response done (0 items)
+"List /apis/extensions/v1beta1/thirdpartyresources" [2.956527212s] [654ns] END
+I0406 18:49:24.209236       1 trace.go:61] Trace "Create /api/v1/namespaces" (started 2017-04-06 18:49:21.247522845 +0000 UTC):
+[31.583µs] [31.583µs] About to convert to expected version
+[142.497µs] [110.914µs] Conversion done
+[164.596µs] [22.099µs] About to store object in database
+[2.961633244s] [2.961468648s] Object stored in database
+[2.961640486s] [7.242µs] Self-link added
+"Create /api/v1/namespaces" [2.961683469s] [42.983µs] END
+I0406 18:49:24.209490       1 trace.go:61] Trace "cacher *storage.StorageClass: List" (started 2017-04-06 18:49:22.042525152 +0000 UTC):
+[2.166918335s] [2.166918335s] Ready
+[2.166922604s] [4.269µs] watchCache locked acquired
+[2.166922725s] [121ns] watchCache fresh enough
+[2.166926008s] [3.283µs] Listed 0 items from cache
+[2.16692724s] [1.232µs] Filtered 0 items
+"cacher *storage.StorageClass: List" [2.166932935s] [5.695µs] END
+I0406 18:49:24.209607       1 trace.go:61] Trace "List /apis/storage.k8s.io/v1beta1/storageclasses" (started 2017-04-06 18:49:22.04240332 +0000 UTC):
+[111.52µs] [111.52µs] About to List from storage
+[2.167097558s] [2.166986038s] Listing from storage done
+[2.167105774s] [8.216µs] Self-linking done
+[2.167176751s] [70.977µs] Writing http response done (0 items)
+"List /apis/storage.k8s.io/v1beta1/storageclasses" [2.16717735s] [599ns] END
+I0406 18:49:24.210071       1 trace.go:61] Trace "cacher *rbac.ClusterRoleBinding: List" (started 2017-04-06 18:49:22.030521764 +0000 UTC):
+[2.179501774s] [2.179501774s] Ready
+[2.179506987s] [5.213µs] watchCache locked acquired
+[2.179507097s] [110ns] watchCache fresh enough
+[2.179510859s] [3.762µs] Listed 0 items from cache
+[2.179511954s] [1.095µs] Filtered 0 items
+"cacher *rbac.ClusterRoleBinding: List" [2.179518776s] [6.822µs] END
+I0406 18:49:24.210185       1 trace.go:61] Trace "List /apis/rbac.authorization.k8s.io/v1beta1/clusterrolebindings" (started 2017-04-06 18:49:22.030317449 +0000 UTC):
+[187.72µs] [187.72µs] About to List from storage
+[2.179764957s] [2.179577237s] Listing from storage done
+[2.179775758s] [10.801µs] Self-linking done
+[2.179840625s] [64.867µs] Writing http response done (0 items)
+"List /apis/rbac.authorization.k8s.io/v1beta1/clusterrolebindings" [2.179841117s] [492ns] END
+I0406 18:49:24.210292       1 trace.go:61] Trace "cacher *rbac.Role: List" (started 2017-04-06 18:49:22.048847441 +0000 UTC):
+[2.161394365s] [2.161394365s] Ready
+[2.161400149s] [5.784µs] watchCache locked acquired
+[2.161400262s] [113ns] watchCache fresh enough
+[2.161404283s] [4.021µs] Listed 0 items from cache
+[2.161405226s] [943ns] Filtered 0 items
+"cacher *rbac.Role: List" [2.161412355s] [7.129µs] END
+I0406 18:49:24.210404       1 trace.go:61] Trace "List /apis/rbac.authorization.k8s.io/v1beta1/roles" (started 2017-04-06 18:49:22.04870749 +0000 UTC):
+[129.306µs] [129.306µs] About to List from storage
+[2.161595579s] [2.161466273s] Listing from storage done
+[2.161603513s] [7.934µs] Self-linking done
+[2.161671099s] [67.586µs] Writing http response done (0 items)
+"List /apis/rbac.authorization.k8s.io/v1beta1/roles" [2.16167158s] [481ns] END
+I0406 18:49:24.229819       1 storage_rbac.go:166] created clusterrole.rbac.authorization.k8s.io/cluster-admin
+I0406 18:49:24.233978       1 storage_rbac.go:166] created clusterrole.rbac.authorization.k8s.io/system:discovery
+I0406 18:49:24.241387       1 storage_rbac.go:166] created clusterrole.rbac.authorization.k8s.io/system:basic-user
+I0406 18:49:24.250674       1 storage_rbac.go:166] created clusterrole.rbac.authorization.k8s.io/admin
+I0406 18:49:24.256710       1 storage_rbac.go:166] created clusterrole.rbac.authorization.k8s.io/edit
+I0406 18:49:24.277261       1 storage_rbac.go:166] created clusterrole.rbac.authorization.k8s.io/view
+I0406 18:49:24.286044       1 storage_rbac.go:166] created clusterrole.rbac.authorization.k8s.io/system:heapster
+I0406 18:49:24.295603       1 storage_rbac.go:166] created clusterrole.rbac.authorization.k8s.io/system:node
+I0406 18:49:24.300536       1 storage_rbac.go:166] created clusterrole.rbac.authorization.k8s.io/system:node-problem-detector
+I0406 18:49:24.331076       1 storage_rbac.go:166] created clusterrole.rbac.authorization.k8s.io/system:node-proxier
+I0406 18:49:24.345461       1 storage_rbac.go:166] created clusterrole.rbac.authorization.k8s.io/system:node-bootstrapper
+I0406 18:49:24.349143       1 storage_rbac.go:166] created clusterrole.rbac.authorization.k8s.io/system:auth-delegator
+I0406 18:49:24.353507       1 storage_rbac.go:166] created clusterrole.rbac.authorization.k8s.io/system:kube-aggregator
+I0406 18:49:24.358486       1 storage_rbac.go:166] created clusterrole.rbac.authorization.k8s.io/system:kube-controller-manager
+I0406 18:49:24.366991       1 storage_rbac.go:166] created clusterrole.rbac.authorization.k8s.io/system:kube-scheduler
+I0406 18:49:24.376426       1 storage_rbac.go:166] created clusterrole.rbac.authorization.k8s.io/system:kube-dns
+I0406 18:49:24.382214       1 storage_rbac.go:166] created clusterrole.rbac.authorization.k8s.io/system:persistent-volume-provisioner
+I0406 18:49:24.385335       1 storage_rbac.go:166] created clusterrole.rbac.authorization.k8s.io/system:controller:attachdetach-controller
+I0406 18:49:24.389305       1 storage_rbac.go:166] created clusterrole.rbac.authorization.k8s.io/system:controller:cronjob-controller
+I0406 18:49:24.396369       1 storage_rbac.go:166] created clusterrole.rbac.authorization.k8s.io/system:controller:daemon-set-controller
+I0406 18:49:24.401264       1 storage_rbac.go:166] created clusterrole.rbac.authorization.k8s.io/system:controller:deployment-controller
+I0406 18:49:24.408691       1 storage_rbac.go:166] created clusterrole.rbac.authorization.k8s.io/system:controller:disruption-controller
+I0406 18:49:24.414700       1 storage_rbac.go:166] created clusterrole.rbac.authorization.k8s.io/system:controller:endpoint-controller
+I0406 18:49:24.418836       1 storage_rbac.go:166] created clusterrole.rbac.authorization.k8s.io/system:controller:generic-garbage-collector
+I0406 18:49:24.427562       1 storage_rbac.go:166] created clusterrole.rbac.authorization.k8s.io/system:controller:horizontal-pod-autoscaler
+I0406 18:49:24.431369       1 storage_rbac.go:166] created clusterrole.rbac.authorization.k8s.io/system:controller:job-controller
+I0406 18:49:24.438363       1 storage_rbac.go:166] created clusterrole.rbac.authorization.k8s.io/system:controller:namespace-controller
+I0406 18:49:24.450965       1 storage_rbac.go:166] created clusterrole.rbac.authorization.k8s.io/system:controller:node-controller
+I0406 18:49:24.457912       1 storage_rbac.go:166] created clusterrole.rbac.authorization.k8s.io/system:controller:persistent-volume-binder
+I0406 18:49:24.463933       1 storage_rbac.go:166] created clusterrole.rbac.authorization.k8s.io/system:controller:pod-garbage-collector
+I0406 18:49:24.468109       1 storage_rbac.go:166] created clusterrole.rbac.authorization.k8s.io/system:controller:replicaset-controller
+I0406 18:49:24.473573       1 storage_rbac.go:166] created clusterrole.rbac.authorization.k8s.io/system:controller:replication-controller
+I0406 18:49:24.479825       1 storage_rbac.go:166] created clusterrole.rbac.authorization.k8s.io/system:controller:resourcequota-controller
+I0406 18:49:24.490158       1 storage_rbac.go:166] created clusterrole.rbac.authorization.k8s.io/system:controller:route-controller
+I0406 18:49:24.496603       1 storage_rbac.go:166] created clusterrole.rbac.authorization.k8s.io/system:controller:service-account-controller
+I0406 18:49:24.502132       1 storage_rbac.go:166] created clusterrole.rbac.authorization.k8s.io/system:controller:service-controller
+I0406 18:49:24.507358       1 storage_rbac.go:166] created clusterrole.rbac.authorization.k8s.io/system:controller:statefulset-controller
+I0406 18:49:24.512287       1 storage_rbac.go:166] created clusterrole.rbac.authorization.k8s.io/system:controller:ttl-controller
+I0406 18:49:24.517522       1 storage_rbac.go:166] created clusterrole.rbac.authorization.k8s.io/system:controller:certificate-controller
+I0406 18:49:24.522869       1 storage_rbac.go:194] created clusterrolebinding.rbac.authorization.k8s.io/cluster-admin
+I0406 18:49:24.526973       1 storage_rbac.go:194] created clusterrolebinding.rbac.authorization.k8s.io/system:discovery
+I0406 18:49:24.547155       1 storage_rbac.go:194] created clusterrolebinding.rbac.authorization.k8s.io/system:basic-user
+I0406 18:49:24.551583       1 storage_rbac.go:194] created clusterrolebinding.rbac.authorization.k8s.io/system:node
+I0406 18:49:24.556128       1 storage_rbac.go:194] created clusterrolebinding.rbac.authorization.k8s.io/system:node-proxier
+I0406 18:49:24.560473       1 storage_rbac.go:194] created clusterrolebinding.rbac.authorization.k8s.io/system:kube-controller-manager
+I0406 18:49:24.564212       1 storage_rbac.go:194] created clusterrolebinding.rbac.authorization.k8s.io/system:kube-dns
+I0406 18:49:24.570821       1 storage_rbac.go:194] created clusterrolebinding.rbac.authorization.k8s.io/system:kube-scheduler
+I0406 18:49:24.576218       1 storage_rbac.go:194] created clusterrolebinding.rbac.authorization.k8s.io/system:controller:attachdetach-controller
+I0406 18:49:24.581200       1 storage_rbac.go:194] created clusterrolebinding.rbac.authorization.k8s.io/system:controller:cronjob-controller
+I0406 18:49:24.586257       1 storage_rbac.go:194] created clusterrolebinding.rbac.authorization.k8s.io/system:controller:daemon-set-controller
+I0406 18:49:24.590326       1 storage_rbac.go:194] created clusterrolebinding.rbac.authorization.k8s.io/system:controller:deployment-controller
+I0406 18:49:24.601909       1 storage_rbac.go:194] created clusterrolebinding.rbac.authorization.k8s.io/system:controller:disruption-controller
+I0406 18:49:24.605225       1 storage_rbac.go:194] created clusterrolebinding.rbac.authorization.k8s.io/system:controller:endpoint-controller
+I0406 18:49:24.609521       1 storage_rbac.go:194] created clusterrolebinding.rbac.authorization.k8s.io/system:controller:generic-garbage-collector
+I0406 18:49:24.612751       1 storage_rbac.go:194] created clusterrolebinding.rbac.authorization.k8s.io/system:controller:horizontal-pod-autoscaler
+I0406 18:49:24.616018       1 storage_rbac.go:194] created clusterrolebinding.rbac.authorization.k8s.io/system:controller:job-controller
+I0406 18:49:24.619265       1 storage_rbac.go:194] created clusterrolebinding.rbac.authorization.k8s.io/system:controller:namespace-controller
+I0406 18:49:24.622552       1 storage_rbac.go:194] created clusterrolebinding.rbac.authorization.k8s.io/system:controller:node-controller
+I0406 18:49:24.629750       1 storage_rbac.go:194] created clusterrolebinding.rbac.authorization.k8s.io/system:controller:persistent-volume-binder
+I0406 18:49:24.644617       1 storage_rbac.go:194] created clusterrolebinding.rbac.authorization.k8s.io/system:controller:pod-garbage-collector
+I0406 18:49:24.662585       1 storage_rbac.go:194] created clusterrolebinding.rbac.authorization.k8s.io/system:controller:replicaset-controller
+I0406 18:49:24.704444       1 storage_rbac.go:194] created clusterrolebinding.rbac.authorization.k8s.io/system:controller:replication-controller
+I0406 18:49:24.744563       1 storage_rbac.go:194] created clusterrolebinding.rbac.authorization.k8s.io/system:controller:resourcequota-controller
+I0406 18:49:24.782381       1 storage_rbac.go:194] created clusterrolebinding.rbac.authorization.k8s.io/system:controller:route-controller
+I0406 18:49:24.834389       1 storage_rbac.go:194] created clusterrolebinding.rbac.authorization.k8s.io/system:controller:service-account-controller
+I0406 18:49:24.862643       1 storage_rbac.go:194] created clusterrolebinding.rbac.authorization.k8s.io/system:controller:service-controller
+I0406 18:49:24.904332       1 storage_rbac.go:194] created clusterrolebinding.rbac.authorization.k8s.io/system:controller:statefulset-controller
+I0406 18:49:24.942601       1 storage_rbac.go:194] created clusterrolebinding.rbac.authorization.k8s.io/system:controller:ttl-controller
+I0406 18:49:24.982628       1 storage_rbac.go:194] created clusterrolebinding.rbac.authorization.k8s.io/system:controller:certificate-controller
+I0406 18:49:25.023644       1 storage_rbac.go:225] created role.rbac.authorization.k8s.io/system:controller:bootstrap-signer in kube-public 
+I0406 18:49:25.063305       1 storage_rbac.go:225] created role.rbac.authorization.k8s.io/extension-apiserver-authentication-reader in kube-system 
+I0406 18:49:25.103708       1 storage_rbac.go:225] created role.rbac.authorization.k8s.io/system:controller:bootstrap-signer in kube-system 
+I0406 18:49:25.144771       1 storage_rbac.go:225] created role.rbac.authorization.k8s.io/system:controller:token-cleaner in kube-system 
+I0406 18:49:25.185633       1 storage_rbac.go:255] created rolebinding.rbac.authorization.k8s.io/system:controller:bootstrap-signer in kube-system
+I0406 18:49:25.224460       1 storage_rbac.go:255] created rolebinding.rbac.authorization.k8s.io/system:controller:token-cleaner in kube-system
+I0406 18:49:25.263456       1 storage_rbac.go:255] created rolebinding.rbac.authorization.k8s.io/system:controller:bootstrap-signer in kube-public
+I0406 18:49:31.326165       1 trace.go:61] Trace "List /api/v1/nodes" (started 2017-04-06 18:49:29.295612581 +0000 UTC):
+[8.856µs] [8.856µs] About to List from storage
+[2.030155235s] [2.030146379s] Listing from storage done
+[2.030175242s] [20.007µs] Self-linking done
+[2.030470703s] [295.461µs] Writing http response done (1 items)
+"List /api/v1/nodes" [2.030472116s] [1.413µs] END
+I0406 18:49:31.326779       1 trace.go:61] Trace "Get /api/v1/namespaces/kube-system/endpoints/kube-controller-manager" (started 2017-04-06 18:49:30.686913944 +0000 UTC):
+"Get /api/v1/namespaces/kube-system/endpoints/kube-controller-manager" [639.822036ms] [639.822036ms] END
+I0406 18:49:31.328573       1 trace.go:61] Trace "Create /api/v1/namespaces/kube-system/secrets" (started 2017-04-06 18:49:29.141107083 +0000 UTC):
+[351.262µs] [351.262µs] About to convert to expected version
+[441.184µs] [89.922µs] Conversion done
+[492.174µs] [50.99µs] About to store object in database
+[2.187327965s] [2.186835791s] Object stored in database
+[2.187337004s] [9.039µs] Self-link added
+"Create /api/v1/namespaces/kube-system/secrets" [2.187411332s] [74.328µs] END
+I0406 18:49:31.332671       1 trace.go:61] Trace "List /api/v1/namespaces/kube-system/secrets" (started 2017-04-06 18:49:29.166606542 +0000 UTC):
+[132.392µs] [132.392µs] About to List from storage
+[2.165197506s] [2.165065114s] Listing from storage done
+[2.165267096s] [69.59µs] Self-linking done
+[2.16601243s] [745.334µs] Writing http response done (18 items)
+"List /api/v1/namespaces/kube-system/secrets" [2.166013385s] [955ns] END
+I0406 18:49:31.352487       1 trace.go:61] Trace "GuaranteedUpdate etcd3: *api.Event" (started 2017-04-06 18:49:29.239312454 +0000 UTC):
+[2.084447618s] [2.084447618s] initial value restored
+[2.100439645s] [15.992027ms] Transaction prepared
+[2.113055198s] [12.615553ms] Transaction committed
+"GuaranteedUpdate etcd3: *api.Event" [2.11311245s] [57.252µs] END
+I0406 18:49:32.472923       1 trace.go:61] Trace "Create /api/v1/namespaces/kube-system/endpoints" (started 2017-04-06 18:49:31.878615597 +0000 UTC):
+[39.636µs] [39.636µs] About to convert to expected version
+[134.961µs] [95.325µs] Conversion done
+[162.92µs] [27.959µs] About to store object in database
+[594.144232ms] [593.981312ms] Object stored in database
+[594.154574ms] [10.342µs] Self-link added
+"Create /api/v1/namespaces/kube-system/endpoints" [594.228043ms] [73.469µs] END
+I0406 18:49:32.474063       1 trace.go:61] Trace "Create /api/v1/namespaces/kube-system/serviceaccounts" (started 2017-04-06 18:49:31.772809011 +0000 UTC):
+[38.258µs] [38.258µs] About to convert to expected version
+[101.194µs] [62.936µs] Conversion done
+[115µs] [13.806µs] About to store object in database
+[701.1012ms] [700.9862ms] Object stored in database
+[701.109207ms] [8.007µs] Self-link added
+"Create /api/v1/namespaces/kube-system/serviceaccounts" [701.187252ms] [78.045µs] END
+I0406 18:49:32.474977       1 trace.go:61] Trace "GuaranteedUpdate etcd3: *api.ServiceAccount" (started 2017-04-06 18:49:31.759345069 +0000 UTC):
+[45.282µs] [45.282µs] initial value restored
+[157.652µs] [112.37µs] Transaction prepared
+[715.529901ms] [715.372249ms] Transaction committed
+"GuaranteedUpdate etcd3: *api.ServiceAccount" [715.580608ms] [50.707µs] END
+I0406 18:49:32.475160       1 trace.go:61] Trace "Update /api/v1/namespaces/kube-system/serviceaccounts/service-account-controller" (started 2017-04-06 18:49:31.758690881 +0000 UTC):
+[544.205µs] [544.205µs] About to convert to expected version
+[617.122µs] [72.917µs] Conversion done
+[621.287µs] [4.165µs] About to store object in database
+[716.316596ms] [715.695309ms] Object stored in database
+[716.325687ms] [9.091µs] Self-link added
+"Update /api/v1/namespaces/kube-system/serviceaccounts/service-account-controller" [716.403713ms] [78.026µs] END
+I0406 18:49:32.499354       1 trace.go:61] Trace "GuaranteedUpdate etcd3: *api.Event" (started 2017-04-06 18:49:31.75192154 +0000 UTC):
+[2.129714ms] [2.129714ms] initial value restored
+[722.632017ms] [720.502303ms] Transaction prepared
+[747.34343ms] [24.711413ms] Transaction committed
+"GuaranteedUpdate etcd3: *api.Event" [747.384945ms] [41.515µs] END
+I0406 18:49:35.137466       1 trace.go:61] Trace "Get /api/v1/namespaces/default" (started 2017-04-06 18:49:34.342008696 +0000 UTC):
+"Get /api/v1/namespaces/default" [795.402085ms] [795.402085ms] END
+I0406 18:49:35.137708       1 trace.go:61] Trace "Get /api/v1/namespaces/kube-system/endpoints/kube-scheduler" (started 2017-04-06 18:49:34.483239552 +0000 UTC):
+"Get /api/v1/namespaces/kube-system/endpoints/kube-scheduler" [654.420441ms] [654.420441ms] END
+I0406 18:49:35.176300       1 trace.go:61] Trace "GuaranteedUpdate etcd3: *api.Event" (started 2017-04-06 18:49:34.236349948 +0000 UTC):
+[911.656µs] [911.656µs] initial value restored
+[938.969003ms] [938.057347ms] Transaction prepared
+[939.865664ms] [896.661µs] Transaction committed
+"GuaranteedUpdate etcd3: *api.Event" [939.895503ms] [29.839µs] END
+I0406 18:49:43.254280       1 trace.go:61] Trace "Create /api/v1/namespaces/kube-system/events" (started 2017-04-06 18:49:42.430960415 +0000 UTC):
+[1.003737ms] [1.003737ms] About to convert to expected version
+[1.188623ms] [184.886µs] Conversion done
+[1.246569ms] [57.946µs] About to store object in database
+[823.136293ms] [821.889724ms] Object stored in database
+[823.149273ms] [12.98µs] Self-link added
+"Create /api/v1/namespaces/kube-system/events" [823.234849ms] [85.576µs] END
+I0406 18:49:48.314000       1 trace.go:61] Trace "Get /api/v1/namespaces/kube-system/endpoints/kube-controller-manager" (started 2017-04-06 18:49:47.410963776 +0000 UTC):
+"Get /api/v1/namespaces/kube-system/endpoints/kube-controller-manager" [902.998681ms] [902.998681ms] END
+I0406 18:49:48.314973       1 trace.go:61] Trace "GuaranteedUpdate etcd3: *api.Endpoints" (started 2017-04-06 18:49:47.266120437 +0000 UTC):
+[46.034µs] [46.034µs] initial value restored
+[245.518µs] [199.484µs] Transaction prepared
+[1.048805329s] [1.048559811s] Transaction committed
+"GuaranteedUpdate etcd3: *api.Endpoints" [1.048826552s] [21.223µs] END
+I0406 18:49:48.315074       1 trace.go:61] Trace "Update /api/v1/namespaces/kube-system/endpoints/kube-scheduler" (started 2017-04-06 18:49:47.265956492 +0000 UTC):
+[47.384µs] [47.384µs] About to convert to expected version
+[112.096µs] [64.712µs] Conversion done
+[118.327µs] [6.231µs] About to store object in database
+[1.049046881s] [1.048928554s] Object stored in database
+[1.04905118s] [4.299µs] Self-link added
+"Update /api/v1/namespaces/kube-system/endpoints/kube-scheduler" [1.049086302s] [35.122µs] END
+I0406 18:49:48.317438       1 trace.go:61] Trace "GuaranteedUpdate etcd3: *api.Node" (started 2017-04-06 18:49:47.071398381 +0000 UTC):
+[74.897µs] [74.897µs] initial value restored
+[903.041µs] [828.144µs] Transaction prepared
+[1.24593758s] [1.245034539s] Transaction committed
+"GuaranteedUpdate etcd3: *api.Node" [1.246013361s] [75.781µs] END
+I0406 18:49:48.330442       1 trace.go:61] Trace "Create /api/v1/namespaces/default/events" (started 2017-04-06 18:49:47.07196301 +0000 UTC):
+[1.107565ms] [1.107565ms] About to convert to expected version
+[1.181704ms] [74.139µs] Conversion done
+[1.207073ms] [25.369µs] About to store object in database
+[1.258397513s] [1.25719044s] Object stored in database
+[1.258402236s] [4.723µs] Self-link added
+"Create /api/v1/namespaces/default/events" [1.258443158s] [40.922µs] END
+I0406 18:49:53.456466       1 trace.go:61] Trace "List /api/v1/nodes" (started 2017-04-06 18:49:52.751437109 +0000 UTC):
+[9.837µs] [9.837µs] About to List from storage
+[704.804949ms] [704.795112ms] Listing from storage done
+[704.823034ms] [18.085µs] Self-linking done
+[704.965677ms] [142.643µs] Writing http response done (1 items)
+"List /api/v1/nodes" [704.966757ms] [1.08µs] END
+I0406 18:49:53.456466       1 trace.go:61] Trace "GuaranteedUpdate etcd3: *api.Endpoints" (started 2017-04-06 18:49:52.334450082 +0000 UTC):
+[111.639µs] [111.639µs] initial value restored
+[330.204µs] [218.565µs] Transaction prepared
+[1.121925371s] [1.121595167s] Transaction committed
+"GuaranteedUpdate etcd3: *api.Endpoints" [1.12195629s] [30.919µs] END
+I0406 18:49:53.456883       1 trace.go:61] Trace "Update /api/v1/namespaces/kube-system/endpoints/kube-scheduler" (started 2017-04-06 18:49:52.334232233 +0000 UTC):
+[29.32µs] [29.32µs] About to convert to expected version
+[114.26µs] [84.94µs] Conversion done
+[121.15µs] [6.89µs] About to store object in database
+[1.122570309s] [1.122449159s] Object stored in database
+[1.12257638s] [6.071µs] Self-link added
+"Update /api/v1/namespaces/kube-system/endpoints/kube-scheduler" [1.122618187s] [41.807µs] END
+I0406 18:49:53.458164       1 trace.go:61] Trace "GuaranteedUpdate etcd3: *api.Endpoints" (started 2017-04-06 18:49:52.344502733 +0000 UTC):
+[48.181µs] [48.181µs] initial value restored
+[242.032µs] [193.851µs] Transaction prepared
+[1.113605001s] [1.113362969s] Transaction committed
+"GuaranteedUpdate etcd3: *api.Endpoints" [1.113632823s] [27.822µs] END
+I0406 18:49:53.458888       1 trace.go:61] Trace "Update /api/v1/namespaces/kube-system/endpoints/kube-controller-manager" (started 2017-04-06 18:49:52.344283052 +0000 UTC):
+[66.056µs] [66.056µs] About to convert to expected version
+[165.651µs] [99.595µs] Conversion done
+[171.524µs] [5.873µs] About to store object in database
+[1.114520651s] [1.114349127s] Object stored in database
+[1.114526682s] [6.031µs] Self-link added
+"Update /api/v1/namespaces/kube-system/endpoints/kube-controller-manager" [1.114570015s] [43.333µs] END
+I0406 18:50:23.526753       1 trace.go:61] Trace "GuaranteedUpdate etcd3: *api.Endpoints" (started 2017-04-06 18:50:21.610152007 +0000 UTC):
+[64.21µs] [64.21µs] initial value restored
+[233.722µs] [169.512µs] Transaction prepared
+[1.916513412s] [1.91627969s] Transaction committed
+"GuaranteedUpdate etcd3: *api.Endpoints" [1.916547627s] [34.215µs] END
+I0406 18:50:23.526878       1 trace.go:61] Trace "Update /api/v1/namespaces/kube-system/endpoints/kube-scheduler" (started 2017-04-06 18:50:21.610009182 +0000 UTC):
+[30.818µs] [30.818µs] About to convert to expected version
+[96.987µs] [66.169µs] Conversion done
+[102.288µs] [5.301µs] About to store object in database
+[1.916777592s] [1.916675304s] Object stored in database
+[1.916782354s] [4.762µs] Self-link added
+"Update /api/v1/namespaces/kube-system/endpoints/kube-scheduler" [1.916838179s] [55.825µs] END
+I0406 18:55:36.984686       1 trace.go:61] Trace "Get /api/v1/namespaces/kube-system/endpoints/kube-controller-manager" (started 2017-04-06 18:55:35.367561534 +0000 UTC):
+"Get /api/v1/namespaces/kube-system/endpoints/kube-controller-manager" [1.617047691s] [1.617047691s] END
+I0406 18:55:36.985318       1 trace.go:61] Trace "Get /api/v1/namespaces/default" (started 2017-04-06 18:55:35.499308201 +0000 UTC):
+"Get /api/v1/namespaces/default" [1.485984399s] [1.485984399s] END
+I0406 18:55:36.990812       1 trace.go:61] Trace "List /apis/extensions/v1beta1/thirdpartyresources" (started 2017-04-06 18:55:34.371204642 +0000 UTC):
+[10.738µs] [10.738µs] About to List from storage
+[2.619468257s] [2.619457519s] Listing from storage done
+[2.619478311s] [10.054µs] Self-linking done
+[2.619565047s] [86.736µs] Writing http response done (0 items)
+"List /apis/extensions/v1beta1/thirdpartyresources" [2.619565797s] [750ns] END
+I0406 18:55:36.996226       1 trace.go:61] Trace "GuaranteedUpdate etcd3: *api.Node" (started 2017-04-06 18:55:35.513728596 +0000 UTC):
+[205.529µs] [205.529µs] initial value restored
+[1.345868ms] [1.140339ms] Transaction prepared
+[1.482391328s] [1.48104546s] Transaction committed
+"GuaranteedUpdate etcd3: *api.Node" [1.482459318s] [67.99µs] END
+I0406 18:55:36.997606       1 trace.go:61] Trace "GuaranteedUpdate etcd3: *api.Endpoints" (started 2017-04-06 18:55:35.266945703 +0000 UTC):
+[82µs] [82µs] initial value restored
+[342.696µs] [260.696µs] Transaction prepared
+[1.730598372s] [1.730255676s] Transaction committed
+"GuaranteedUpdate etcd3: *api.Endpoints" [1.730622435s] [24.063µs] END
+I0406 18:55:36.997826       1 trace.go:61] Trace "Update /api/v1/namespaces/kube-system/endpoints/kube-scheduler" (started 2017-04-06 18:55:35.266701177 +0000 UTC):
+[63.752µs] [63.752µs] About to convert to expected version
+[155.001µs] [91.249µs] Conversion done
+[161.122µs] [6.121µs] About to store object in database
+[1.730937468s] [1.730776346s] Object stored in database
+[1.730942251s] [4.783µs] Self-link added
+"Update /api/v1/namespaces/kube-system/endpoints/kube-scheduler" [1.73108043s] [138.179µs] END
+I0406 18:55:37.002997       1 trace.go:61] Trace "GuaranteedUpdate etcd3: *api.Event" (started 2017-04-06 18:55:35.506595096 +0000 UTC):
+[1.478281278s] [1.478281278s] initial value restored
+[1.48933726s] [11.055982ms] Transaction prepared
+[1.496336153s] [6.998893ms] Transaction committed
+"GuaranteedUpdate etcd3: *api.Event" [1.496365881s] [29.728µs] END
+I0406 18:55:40.328305       1 trace.go:61] Trace "Get /api/v1/namespaces/kube-system/pods/kube-flannel-ds-8jqzg" (started 2017-04-06 18:55:39.811483974 +0000 UTC):
+"Get /api/v1/namespaces/kube-system/pods/kube-flannel-ds-8jqzg" [516.766746ms] [516.766746ms] END
+I0406 18:55:40.338934       1 trace.go:61] Trace "GuaranteedUpdate etcd3: *api.Event" (started 2017-04-06 18:55:39.630361696 +0000 UTC):
+[4.239428ms] [4.239428ms] initial value restored
+[697.201691ms] [692.962263ms] Transaction prepared
+[708.4619ms] [11.260209ms] Transaction committed
+"GuaranteedUpdate etcd3: *api.Event" [708.512356ms] [50.456µs] END

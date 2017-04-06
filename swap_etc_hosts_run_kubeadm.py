@@ -31,7 +31,7 @@ def swap_etc_hosts(ip):
     os.rename("/tmp/hosts", "/etc/hosts")
 
 def init_save_kube_join_string(filename, ip):
-    print run("kubeadm init --apiserver-advertise-address 192.168.50.4")
+    print run("kubeadm init --apiserver-advertise-address 192.168.50.4 --pod-network-cidr 10.244.0.0/16")
     print run("mkdir -p ~/.kube && cp /etc/kubernetes/admin.conf ~/.kube/config && cp -R /root/.kube/ ~ubuntu/.kube/ && chown ubuntu:ubuntu -R ~ubuntu/.kube/")
     print run("cp /root/.kube/config /vagrant/config")
     # flannel rbac
@@ -56,6 +56,7 @@ def init_save_kube_join_string(filename, ip):
 Setup first node we run as master. Have rest join it
 """
 def init_or_join(filename, myip):
+    # write_file("/etc/systemd/system/kubelet.service.d/15-node-ip-override.conf", "[Service]\nEnvironment=\"KUBELET_EXTRA_ARGS=--node-ip=%s\"\n" % myip)
     if socket.gethostname() == "k8s-master":
     #not os.path.exists(filename):
         init_save_kube_join_string(filename, myip)

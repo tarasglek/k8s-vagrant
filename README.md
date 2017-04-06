@@ -1,6 +1,8 @@
 
 `vagrant up`
+
 `cp config /Users/taras/.kube/config`
+
 ```
 kubectl get --all-namespaces pods -o wide
 NAMESPACE     NAME                                 READY     STATUS                                                                                                                                                                                                                                                                                RESTARTS   AGE       IP             NODE

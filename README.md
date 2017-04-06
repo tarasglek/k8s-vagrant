@@ -1,7 +1,7 @@
 
 `vagrant up`
 
-`cp config /Users/taras/.kube/config`
+`cp config ~/.kube/config`
 
 ```
 kubectl get --all-namespaces pods -o wide

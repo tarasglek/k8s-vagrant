@@ -44,4 +44,4 @@ apt-get install -y kubelet kubeadm kubectl kubernetes-cni
 #fix env
 # need kubeadm with https://github.com/kubernetes/kubernetes/pull/43835/files
 # cp /vagrant/kubeadm-1.6.fixed /usr/bin/kubeadm
-#/vagrant/swap_etc_hosts_run_kubeadm.py
+/vagrant/swap_etc_hosts_run_kubeadm.py

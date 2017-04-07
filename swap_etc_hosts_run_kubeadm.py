@@ -36,7 +36,7 @@ def init_save_kube_join_string(filename, ip):
     print run("cp /root/.kube/config /vagrant/config")
     # flannel rbac
     print run("kubectl create -f https://raw.githubusercontent.com/coreos/flannel/master/Documentation/kube-flannel-rbac.yml")
-    print run("kubectl create -f https://github.com/coreos/flannel/blob/master/Documentation/kube-flannel.yml?raw=true")
+    print run("kubectl create -f kube-flannel.yml")
     #print run("kubectl apply -f https://git.io/weave-kube-1.6")
     #enable scheduling pods on master node
     print run("kubectl taint nodes --all node-role.kubernetes.io/master-")

@@ -16,7 +16,7 @@ iptables -L
 # save the debs
 mkdir -p /vagrant/apt-cache/
 rm -rf /var/cache/apt/archives/
-ln -sv /vagrant/apt-cache/ /var/cache/apt/archives/
+ln -sv /vagrant/apt-cache/ /var/cache/apt/archives
 
 apt-get -y install \
   apt-transport-https \
@@ -44,4 +44,4 @@ apt-get install -y kubelet kubeadm kubectl kubernetes-cni
 #fix env
 # need kubeadm with https://github.com/kubernetes/kubernetes/pull/43835/files
 # cp /vagrant/kubeadm-1.6.fixed /usr/bin/kubeadm
-/vagrant/swap_etc_hosts_run_kubeadm.py
+#/vagrant/swap_etc_hosts_run_kubeadm.py

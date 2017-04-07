@@ -19,17 +19,6 @@ def get_ip():
             return m[1]
     raise KeyError
 
-"""
-Make hostname -i return correct ip
-This makes kubernetes assign correct node ip
-"""
-def swap_etc_hosts(ip):
-    s = open('/etc/hosts').read()
-    s = s.replace("127.0.0.1", ip, 1)
-    with open('/tmp/hosts', 'w') as outfile:
-        outfile.write(s)
-    os.rename("/tmp/hosts", "/etc/hosts")
-
 def init_save_kube_join_string(filename, ip):
     print run("kubeadm init --apiserver-advertise-address 192.168.50.4 --pod-network-cidr 10.244.0.0/16")
     print run("mkdir -p ~/.kube && cp /etc/kubernetes/admin.conf ~/.kube/config && cp -R /root/.kube/ ~ubuntu/.kube/ && chown ubuntu:ubuntu -R ~ubuntu/.kube/")
@@ -48,24 +37,40 @@ def init_save_kube_join_string(filename, ip):
     #skip header, grab first token
     token = s.split("\n")[1].split(' ')[0]
     join_str = "kubeadm join --token %s %s:6443\n" % (token, ip)
+    write_file(filename, join_str)
+
+def write_file(filename, body):
     with open(filename, 'w') as outfile:
-        outfile.write(join_str)
-    print join_str
+        outfile.write(body)
+    print "Wrote " + filename
+
+def read_file(filename):
+    return open(filename).read()
+
+def mod_kubelet(myip):
+    cfg = "\n[Service]\nEnvironment=\"KUBELET_EXTRA_ARGS=--node-ip=%s --enable-controller-attach-detach=false\"\n" % myip
+    write_file(
+        "/etc/systemd/system/kubelet.service.d/15-node-override.conf", cfg)
+    run("systemctl daemon-reload")
 
 """
 Setup first node we run as master. Have rest join it
 """
 def init_or_join(filename, myip):
-    # write_file("/etc/systemd/system/kubelet.service.d/15-node-ip-override.conf", "[Service]\nEnvironment=\"KUBELET_EXTRA_ARGS=--node-ip=%s\"\n" % myip)
+    mod_kubelet(myip)
     if socket.gethostname() == "k8s-master":
-    #not os.path.exists(filename):
         init_save_kube_join_string(filename, myip)
     else:
         print run(open(filename).read())
 
 def main():
     ip = get_ip()
-    swap_etc_hosts(ip)
+    #consistent iscsi IQN
+    # template = "InitiatorName=iqn.1993-08.org.debian:01:7c276e15bd7d"
+    # id = ip.replace(".", "")
+    # iqn = template[0:len(template) - len(id)] + id
+    # write_file("/etc/iscsi/initiatorname.iscsi", iqn)
+    # run("systemctl restart open-iscsi")
     init_or_join("/vagrant/kubeadm_join", ip)
 
 main()

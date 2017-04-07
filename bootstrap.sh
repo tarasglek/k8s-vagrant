@@ -18,30 +18,24 @@ mkdir -p /vagrant/apt-cache/
 rm -rf /var/cache/apt/archives/
 ln -sv /vagrant/apt-cache/ /var/cache/apt/archives
 
-apt-get -y install \
-  apt-transport-https \
-  ca-certificates \
-  curl linux-image-extra-$(uname -r) \
+if [ ! -f /usr/bin/kubeadm ]; then
 
-apt-get install -y xfsprogs open-iscsi multipath-tools util-linux socat python
+  apt-get -y install \
+    apt-transport-https \
+    ca-certificates \
+    curl linux-image-extra-$(uname -r) \
+    xfsprogs open-iscsi multipath-tools util-linux socat python 
 
-# instructions cut/pasted from https://kubernetes.io/docs/getting-started-guides/kubeadm/
-curl -s https://packages.cloud.google.com/apt/doc/apt-key.gpg | apt-key add -
-cat <<EOF >/etc/apt/sources.list.d/kubernetes.list
-deb http://apt.kubernetes.io/ kubernetes-xenial main
-EOF
-apt-get update && apt-get install -y apt-transport-https
-curl -s https://packages.cloud.google.com/apt/doc/apt-key.gpg | apt-key add -
-cat <<EOF >/etc/apt/sources.list.d/kubernetes.list
-deb http://apt.kubernetes.io/ kubernetes-xenial main
-EOF
-apt-get update
-# Install docker if you don't have it already.
-apt-get install -y docker.io
-apt-get install -y kubelet kubeadm kubectl kubernetes-cni
+  # instructions cut/pasted from https://kubernetes.io/docs/getting-started-guides/kubeadm/
+  curl -s https://packages.cloud.google.com/apt/doc/apt-key.gpg | apt-key add -
 
+  echo deb http://apt.kubernetes.io/ kubernetes-xenial main > /etc/apt/sources.list.d/kubernetes.list
 
-#fix env
-# need kubeadm with https://github.com/kubernetes/kubernetes/pull/43835/files
-# cp /vagrant/kubeadm-1.6.fixed /usr/bin/kubeadm
+  apt-get update
+  # Install docker if you don't have it already.
+  apt-get install -y docker.io kubelet kubeadm kubectl kubernetes-cni
+
+fi
+
+#do kubeadm
 /vagrant/swap_etc_hosts_run_kubeadm.py

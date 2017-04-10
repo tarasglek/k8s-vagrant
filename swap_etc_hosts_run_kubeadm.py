@@ -57,20 +57,23 @@ def mod_kubelet(myip):
 Setup first node we run as master. Have rest join it
 """
 def init_or_join(filename, myip):
-    mod_kubelet(myip)
     if socket.gethostname() == "k8s-master":
         init_save_kube_join_string(filename, myip)
     else:
         print run(open(filename).read())
 
+#consistent iscsi IQN
+def fix_iscsi_iqn(ip):
+    template = "InitiatorName=iqn.1993-08.org.debian:01:7c276e15bd7d"
+    ipstr = ip.replace(".", "")
+    iqn = template[0:len(template) - len(ipstr)] + ipstr
+    write_file("/etc/iscsi/initiatorname.iscsi", iqn)
+    run("systemctl restart open-iscsi")
+
 def main():
     ip = get_ip()
-    #consistent iscsi IQN
-    # template = "InitiatorName=iqn.1993-08.org.debian:01:7c276e15bd7d"
-    # id = ip.replace(".", "")
-    # iqn = template[0:len(template) - len(id)] + id
-    # write_file("/etc/iscsi/initiatorname.iscsi", iqn)
-    # run("systemctl restart open-iscsi")
+    fix_iscsi_iqn(ip)
+    mod_kubelet(ip)
     init_or_join("/vagrant/kubeadm_join", ip)
 
 main()

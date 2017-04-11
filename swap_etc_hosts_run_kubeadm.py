@@ -68,7 +68,7 @@ def fix_iscsi_iqn(ip):
     ipstr = ip.replace(".", "")
     iqn = template[0:len(template) - len(ipstr)] + ipstr
     write_file("/etc/iscsi/initiatorname.iscsi", iqn)
-    run("systemctl restart open-iscsi")
+    run("apt-get install -y open-iscsi")
 
 def main():
     ip = get_ip()

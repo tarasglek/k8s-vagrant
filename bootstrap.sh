@@ -24,7 +24,7 @@ if [ ! -f /usr/bin/kubeadm ]; then
     apt-transport-https \
     ca-certificates \
     curl linux-image-extra-$(uname -r) \
-    xfsprogs open-iscsi multipath-tools util-linux socat python 
+    xfsprogs multipath-tools util-linux socat python 
 
   # instructions cut/pasted from https://kubernetes.io/docs/getting-started-guides/kubeadm/
   curl -s https://packages.cloud.google.com/apt/doc/apt-key.gpg | apt-key add -

@@ -19,19 +19,14 @@ def get_ip():
             return m[1]
     raise KeyError
 
+def k8s_config():
+    run("/vagrant/k8s_config.sh")
+
 def init_save_kube_join_string(filename, ip):
     print run("kubeadm init --apiserver-advertise-address 192.168.50.4 --pod-network-cidr 10.244.0.0/16")
-    print run("mkdir -p ~/.kube && cp /etc/kubernetes/admin.conf ~/.kube/config && cp -R /root/.kube/ ~ubuntu/.kube/ && chown ubuntu:ubuntu -R ~ubuntu/.kube/")
-    print run("cp /root/.kube/config /vagrant/config")
-    # flannel rbac
-    print run("kubectl create -f https://raw.githubusercontent.com/coreos/flannel/master/Documentation/kube-flannel-rbac.yml")
-    print run("kubectl create -f /vagrant/kube-flannel.yml")
-    #print run("kubectl apply -f https://git.io/weave-kube-1.6")
-    #enable scheduling pods on master node
-    print run("kubectl taint nodes --all node-role.kubernetes.io/master-")
-    # to make tiller work:
-    print run("curl https://gist.githubusercontent.com/groundnuty/fa778fc06cd79f4de687490afb6de421/raw/b43e3a4c1f2670f038db9415cc7f90b2efd3eab5/serviceaccount_fix.yaml  | kubectl create -f -")
-
+    print run("mkdir -p ~/.kube && cp /etc/kubernetes/admin.conf ~/.kube/config")
+    print run("cp /etc/kubernetes/admin.conf /vagrant/config")
+    k8s_config()
     #get us a token for worker nodes
     s = run("kubeadm token list")
     #skip header, grab first token
